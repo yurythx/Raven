@@ -4,18 +4,16 @@
     <div class="container-fluid container-xl position-relative d-flex align-items-center justify-content-between">
 
       <a href="{% url 'blog_index' %}" class="logo d-flex align-items-center">
-        <!-- Uncomment the line below if you also wish to use an image logo -->
-        <!-- <img src="assets/img/logo.png" alt=""> -->
-        <h1 class="sitename">PROJETO RAVEN</h1>
+        <!-- colocar a imagem a logo -->
+        <img src="{% static 'images/raven12.jpg' %}" alt=""> 
+        <h1 class="sitename">RAVEN</h1>
       </a>
 
       <nav id="navmenu" class="navmenu">
         <ul>
           <li><a href="{% url 'index' %}" class="active">Home</a></li>
-          <li><a href="#about">About</a></li>
-          <li><a href="#services">Services</a></li>
-          <li><a href="#portfolio">Portfolio</a></li>
-          <li><a href="#team">Team</a></li>
+          <li><a href="#about">Sobre nós</a></li>
+          <li><a href="#services">Serviços</a></li>
           <li><a href="{% url 'blog_index' %}">Blog</a></li>
           <li class="dropdown"><a href="#"><span>Dropdown</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
             <ul>
@@ -34,7 +32,7 @@
               <li><a href="#">Dropdown 4</a></li>
             </ul>
           </li>
-          <li><a href="#contact">Contact</a></li>
+          <li><a href="#contact">Contato</a></li>
         </ul>
         <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
       </nav>
