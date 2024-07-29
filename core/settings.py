@@ -46,12 +46,12 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     
     "corsheaders",
-    "crispy_forms",
+    #"crispy_forms",
     
     #'apps.config',
     #'apps.base',
-    #'apps.perfil', 
-    #'apps.pages', 
+    'apps.blog', 
+    'apps.pages', 
     
     
     
@@ -147,7 +147,7 @@ SESSION_TIMEOUT_REDIRECT = 'http://localhost:8000/'
 
 SESSION_TIMEOUT_REDIRECT = 'http://localhost:8000/contas/desconectado-inatividade/'
 
-CRISPY_TEMPLATE_PACK = "bootstrap4"
+#CRISPY_TEMPLATE_PACK = "bootstrap4"
 
 LOGIN_URL = 'login'
 LOGIN_REDIRECT_URL = '/'
