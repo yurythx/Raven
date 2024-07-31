@@ -21,7 +21,7 @@
 :root { 
   --background-color: #ffffff; /* Background color for the entire website, including individual sections */
   --default-color: #551055; /* Default color used for the majority of the text content across the entire website */
-  --heading-color: #2a2c39; /* Color for headings, subheadings and title throughout the website */
+  --heading-color: #302a39; /* Color for headings, subheadings and title throughout the website */
   --accent-color: #551055; /* Accent color that represents your brand on the website. It's used for buttons, links, and other elements that need to stand out */
   --surface-color: #ffffff; /* The surface color is used as a background of boxed elements within sections, such as cards, icon boxes, or other elements that require a visual separation from the global background. */
   --contrast-color: #ffffff; /* Contrast color for text, ensuring readability against backgrounds of accent, heading, or default colors. */
@@ -39,6 +39,14 @@
 
 /* Color Presets - These classes override global colors when applied to any section or element, providing reuse of the sam color scheme. */
 
+.imagemDeFundo{
+  border: 1px solid black;
+  background: url('/apps/pages/static/pages/images/head/head2.jpeg') no-repeat; 
+  background-size: 100%; background-position: center;
+  width: auto;
+  height: 100px;
+}
+
 .light-background {
   --background-color: #f9f9f9;
   --surface-color: #ffffff;
@@ -46,7 +54,7 @@
 
 .dark-background {
   --background-color: #060606;
-  --default-color: #ffffff;
+  /*--default-color: #ffffff; */
   --heading-color: #ffffff;
   --surface-color: #551055;
   --contrast-color: #ffffff;
@@ -143,7 +151,7 @@ h6 {
 # Global Header
 --------------------------------------------------------------*/
 .header {
-  --background-color: rgba(255, 255, 255, 0);
+  --background-color: rgba(129, 62, 236, 0);
   --heading-color: #ffffff;
   color: var(--default-color);
   background-color: var(--background-color);
@@ -175,7 +183,7 @@ h6 {
 /* Global Header on Scroll
 ------------------------------*/
 .scrolled .header {
-  --background-color: rgba(42, 44, 57, 0.9);
+  --background-color: #080808;
 }
 
 /*--------------------------------------------------------------
@@ -573,7 +581,7 @@ h6 {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  padding: 160px 0 80px 0;
+  /*padding: 160px 0 80px 0;*/
   text-align: center;
   position: relative;
 }
