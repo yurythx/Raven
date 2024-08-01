@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+    <div class="jumbotron">
+        <h4 class="display-5">Você tem certeza que deseja deletar {{ deletar.titulo_post }}?</h4>
+        <form method="POST">
+            {% csrf_token %}
+            <a href="{% url 'blog_index' %}" class="sc-add-to-cart btn btn-primary">Não</a>
+            <button type="submit" class="sc-add-to-cart btn btn-danger">Deletar</button>
+        </form>        
+    </div>
+
+{% endblock %}
+
+
+
+<form method="post">{% csrf_token %}
+     
+ 
+    <p>Are you sure you want to delete "{{ object }}"?</p>
+     
+     
+        <input type="submit" value="Confirm">
+</form>

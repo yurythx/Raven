@@ -37,7 +37,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
-    
+    'django.contrib.humanize',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -46,8 +46,12 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     
     "corsheaders",
-    #"crispy_forms",
+    "crispy_forms",
     
+
+    "django_summernote",
+    
+
     #'apps.config',
     #'apps.base',
     'apps.blog', 
@@ -147,13 +151,14 @@ SESSION_TIMEOUT_REDIRECT = 'http://localhost:8000/'
 
 SESSION_TIMEOUT_REDIRECT = 'http://localhost:8000/contas/desconectado-inatividade/'
 
-#CRISPY_TEMPLATE_PACK = "bootstrap4"
+
+CRISPY_ALLOWED_TEMPLATE_PACKS = 'bootstrap5'
+CRISPY_TEMPLATE_PACK = 'bootstrap5'
 
 LOGIN_URL = 'login'
 LOGIN_REDIRECT_URL = '/'
 LOGOUT_REDIRECT_URL = '/'
 
-#AUTH_USER_MODEL = "contas.MyUser"
 
 # Database
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
@@ -203,6 +208,9 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
+
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
 
@@ -218,4 +226,33 @@ MESSAGE_TAGS = {
 	constants.DEBUG: 'alert-danger',
 	constants.SUCCESS: 'alert-success',
 	constants.INFO: 'alert-info',
+}
+
+X_FRAME_OPTIONS = 'SAMEORIGIN'
+
+SUMMERNOTE_CONFIG = {
+    'summernote': {
+        # Toolbar customization
+        # https://summernote.org/deep-dive/#custom-toolbar-popover
+        'toolbar': [
+            ['style', ['style', ]],
+            ['font', ['bold', 'italic', 'clear']],
+            ['color', ['color']],
+            ['para', ['ul', 'ol', 'paragraph', 'hr', ]],
+            ['table', ['table']],
+            ['insert', ['link', 'picture']],
+            ['view', ['fullscreen', 'codeview', 'undo', 'redo']],
+        ],
+        'codemirror': {
+            'mode': 'htmlmixed',
+            'lineNumbers': 'true',
+            'lineWrapping': 'true',
+            'theme': 'dracula',
+        },
+    },
+    'css': (
+        '//cdnjs.cloudflare.com/ajax/libs/codemirror/6.65.7/theme/dracula.min.css',
+    ),
+    'attachment_filesize_limit': 30 * 1024 * 1024,
+    'attachment_model': 'blog.PostAttachment',
 }
