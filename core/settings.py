@@ -47,6 +47,7 @@ INSTALLED_APPS = [
     
     "corsheaders",
     "crispy_forms",
+    "crispy_bootstrap5",
     
 
     "django_summernote",
@@ -152,8 +153,9 @@ SESSION_TIMEOUT_REDIRECT = 'http://localhost:8000/'
 SESSION_TIMEOUT_REDIRECT = 'http://localhost:8000/contas/desconectado-inatividade/'
 
 
-CRISPY_ALLOWED_TEMPLATE_PACKS = 'bootstrap5'
-CRISPY_TEMPLATE_PACK = 'bootstrap5'
+CRISPY_ALLOWED_TEMPLATE_PACKS = "bootstrap5"
+
+CRISPY_TEMPLATE_PACK = "bootstrap5"
 
 LOGIN_URL = 'login'
 LOGIN_REDIRECT_URL = '/'

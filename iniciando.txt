@@ -32,6 +32,7 @@ Instalar os seguintes pacotes Iniciais.
         pip install django-requestlogs
         pip install django-session-timeout
         pip install django-crispy-forms
+        pip install crispy-bootstrap5
 
 
 
@@ -46,3 +47,19 @@ Instalar os seguintes pacotes Iniciais.
 -- python manage.py runserver
 
 -- python manage.py createsuperuser
+
+
+'crispy_forms',
+'crispy_bootstrap5',
+
+
+# django-crispy-forms
+CRISPY_ALLOWED_TEMPLATE_PACKS = 'bootstrap5'
+CRISPY_TEMPLATE_PACK = 'bootstrap5'
+
+{% load crispy_forms_tags %}
+
+<form class="" action="" method="post">
+  {% csrf_token %}
+  {{ form|crispy }}
+</form>

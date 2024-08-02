@@ -33,16 +33,23 @@
             </ul>
           </li>
           <li><a href="#contact">contacto</i></a></li>
-          
+		  
+		  
+		  
+		  
+		{% if user.is_authenticated %}
+        
+        <button type="button" class="btn btn-warning"><a href="{% url 'logout' %}"></a><i class="fa fa-cog" aria-hidden="true"  name="Configuração"></i></button>
+		<button type="button" class="btn btn-danger"><a href="#"></a><i class="fa fa-sign-out" aria-hidden="true"  name="Sair"></i></button>
+		{% else %} 
+		<button type="button" class="btn btn-success"><a href="{% url 'login' %}"></a><i class="fa fa-sign-in" aria-hidden="true"  name="Entrar"></i></button>
+        {% endif %}   
         </ul>
 
-        <button type="button" class="btn-roxo"><i class="fa fa-plus" aria-hidden="true" name="Adicionar Usuário"></i></button>
-
-        <button type="button" class="btn btn-success"><i class="fa fa-user" aria-hidden="true" name="Usuário">  Yuri M Menezes</i></button>
-        <button type="button" class="btn btn-primary"><i class="fa fa-plus" aria-hidden="true" name="Adicionar Usuário"></i></button>
-        <button type="button" class="btn btn-warning"><i class="fa fa-cog" aria-hidden="true"  name="Configuração"></i></button>
-        <button type="button" class="btn btn-success"><i class="fa fa-sign-in" aria-hidden="true"  name="Entrar"></i></button>
-        <button type="button" class="btn btn-danger"><i class="fa fa-sign-out" aria-hidden="true"  name="Sair"></i></button>
+       
+		
+        
+        
 
         <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
    
