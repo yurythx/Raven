@@ -1,0 +1,34 @@
+
+
+{% load crispy_forms_tags %}
+
+<div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true"  >
+	<div class="modal-dialog modal-dialog-centered">
+		<div class="modal-content">
+			<div class="modal-header" >
+				<h5 class="modal-title" id="loginModalLabel" >Atenção Usuario ! <i class="link-danger fas fa-exclamation-triangle "></i></h5>
+				<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+			</div>
+			<div class="modal-body">
+
+                
+				<div class="modal-body">
+					Você precisa fazer login pra continuar <br>
+					
+				</div>
+
+
+			</div>
+			<div class="modal-footer">
+
+				<form method="get" action="{% url 'login' %}">
+                    {% csrf_token %}
+                    <button type="submit" class="btn-roxo">Fazer Login    <i class="fa fa-sign-in" aria-hidden="true"></i></button>
+                </form>
+				<!-- <button class="btn btn-danger" onclick="location.href='{% url 'logout' %}'"><a>Sair</a></button> -->
+			</div>
+		</div>
+	</div>
+</div>
+
+ 			

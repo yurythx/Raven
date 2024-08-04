@@ -3,7 +3,7 @@
 <header id="header" class="header d-flex align-items-center fixed-top">
     <div class="container-fluid container-xl position-relative d-flex align-items-center justify-content-between">
 
-      <a href="{% url 'blog_index' %}" class="logo d-flex align-items-center">
+      <a href="{% url 'index' %}" class="logo d-flex align-items-center">
         <!-- colocar a imagem a logo -->
         <img src="{% static 'pages/images/logo/logo.png' %}" alt=""> 
         <h1 class="sitename">PROJECT RAVENNA</h1>
@@ -11,7 +11,7 @@
 
       <nav id="navmenu" class="navmenu">
         <ul>
-          <li><a href="{% url 'blog_index' %}" class="active">Home</a></li>
+          <li><a href="{% url 'index' %}" class="active">Home</a></li>
           <li><a href="#about">Sobre nós</a></li>
           <li><a href="#services">Serviços</a></li>
           <li><a href="{% url 'blog_index' %}">Blog</a></li>
@@ -27,29 +27,27 @@
                   <li><a href="{% url 'blog_index' %}">Blog detalhes</a></li>
                 </ul>
               </li>
-              <li><a href="{% url 'blog_index' %}">error500</a></li>
+              <li><a href="{% url 'error500' %}">error500</a></li>
               <li><a href="#">Dropdown 3</a></li>
-              <li><a href="{% url 'blog_index' %}">error404</a></li>
+              <li><a href="{% url 'error404' %}">error404</a></li>
             </ul>
-          </li>
+       
           <li><a href="#contact">contacto</i></a></li>
 		  
 		  
 		  
 		  
-		{% if user.is_authenticated %}
-        
-        <button type="button" class="btn btn-warning"><a href="{% url 'logout' %}"></a><i class="fa fa-cog" aria-hidden="true"  name="Configuração"></i></button>
-		<button type="button" class="btn btn-danger"><a href="#"></a><i class="fa fa-sign-out" aria-hidden="true"  name="Sair"></i></button>
-		{% else %} 
-		<button type="button" class="btn btn-success"><a href="{% url 'login' %}"></a><i class="fa fa-sign-in" aria-hidden="true"  name="Entrar"></i></button>
-        {% endif %}   
-        </ul>
+          {% if user.is_authenticated %}
+            
+          <button type="submit" class="btn btn-dark" data-bs-toggle="modal" href="#logoutModal"><i class="fa fa-sign-out" aria-hidden="true"></i></button>
+            
+          {% else %} 
+             
+          <button type="submit" class="btn btn-dark" data-bs-toggle="modal" href="#loginModal"><i class="fa fa-sign-in" aria-hidden="true"></i></button>  
 
-       
-		
-        
-        
+          {% endif %}   
+
+        </ul>
 
         <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
    

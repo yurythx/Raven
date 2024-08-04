@@ -12,6 +12,10 @@ class PostForm(forms.ModelForm):
     class Meta:
         model = Post
         
+        # fields = '__all__' esse metodo usa todos os campos no formulario
+        # fields = ('nome', 'telefone')  esse é o metodo que esta sendo usado
+        # exclude = ('celular', 'email')
+        
         fields = ['titulo_post', 'excerto_post', 'conteudo_post', 'autor_post', 'categoria_post', 'imagem_post']
 
         widgets = {

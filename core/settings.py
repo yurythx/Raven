@@ -49,12 +49,13 @@ INSTALLED_APPS = [
     "crispy_forms",
     "crispy_bootstrap5",
     
+    #'bootstrap_modal_forms',
 
     "django_summernote",
     
 
     #'apps.config',
-    #'apps.base',
+    #'apps.books',
     'apps.blog', 
     'apps.pages', 
     

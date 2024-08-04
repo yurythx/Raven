@@ -2,7 +2,7 @@
 
 {% extends  'base.html' %}
 
-
+{% load crispy_forms_tags %}
     
         {% block title %}
         <div class="col-md-4 offset-md-2">
@@ -15,10 +15,6 @@
 
 
     <div class="col-md-4 offset-md-2">
-
-        
-        
-        
         
                 <form method="POST" enctype="multipart/form-data" id="form">
 
@@ -29,13 +25,7 @@
                            
                                             {% csrf_token %}
                                             
-                                            {{ form.as_p }}
-
-                                                            
-                                          
-                                      
-                                   
-                                  
+                                            {{ form|crispy }}
                         </div>
 
 
@@ -46,6 +36,11 @@
           
     </div>
 
+   
+
 {% endblock %}
+
+
+
 
 

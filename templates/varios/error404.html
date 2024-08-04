@@ -31,9 +31,12 @@
 				<h1>404</h1>
 			</div>
 			<h2>Oops! Página não encontrada</h2>
-			<form class="notfound-search">
-				<input type="text" placeholder="Buscar no Blog...">
-				<button type="button">Pesquisar</button>
+			         <!-- Search Widget -->
+					
+					  <!--/Search Widget -->
+			<form action="{% url 'post_busca' %}" class="notfound-search">
+				<input name="termo" value="{{ request.GET.termo }}" class="form-control mr-sm-2" type="search" placeholder="Pesquisar" aria-label="Search">
+				<button type="submit" title="Search"><i class="bi bi-search"></i>Buscar</button>
 			</form>
 			<div class="notfound-social">
 				<a href="https://www.youtube.com/"><i class="fa fa-youtube-play"></i></a>

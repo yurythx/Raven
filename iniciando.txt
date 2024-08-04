@@ -33,7 +33,7 @@ Instalar os seguintes pacotes Iniciais.
         pip install django-session-timeout
         pip install django-crispy-forms
         pip install crispy-bootstrap5
-
+        pip install django_summernote
 
 
 -- django-admin startproject core .
