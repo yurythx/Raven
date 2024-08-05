@@ -50,8 +50,11 @@ INSTALLED_APPS = [
     "crispy_bootstrap5",
     
     #'bootstrap_modal_forms',
-
-    "django_summernote",
+    #"tinymce",
+    #"django_summernote",
+    
+    'ckeditor',
+    'ckeditor_uploader',
     
 
     #'apps.config',
@@ -258,4 +261,21 @@ SUMMERNOTE_CONFIG = {
     ),
     'attachment_filesize_limit': 30 * 1024 * 1024,
     'attachment_model': 'blog.PostAttachment',
+}
+
+
+
+CKEDITOR_BASEPATH = '/static/ckeditor/ckeditor/'
+CKEDITOR_UPLOAD_PATH = 'uploads/'
+CKEDITOR_CONFIGS = {
+    'default':{
+        'toolbar': 'full',
+        'removePlugins':'exportpdf',
+        'extraPlugins': ','.join(
+            [
+                'codesnippet','widget','html5video','youtube'
+                
+            ]
+        ),       
+    }
 }

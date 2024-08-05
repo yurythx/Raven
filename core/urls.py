@@ -27,7 +27,9 @@ urlpatterns = [
     #path('books', include('books.urls')),
     path('blog', include('blog.urls')),
     path('accounts/', include('django.contrib.auth.urls')),
-    path('summernote/', include('django_summernote.urls')),
+    path('ckeditor/', include('ckeditor_uploader.urls'))
+    #path('summernote/', include('django_summernote.urls')),
+    #path('tinymce/', include('tinymce.urls')),
     
 ]
 urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT) # Adicionar Isto

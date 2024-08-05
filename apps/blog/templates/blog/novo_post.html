@@ -24,8 +24,10 @@
                         <div class="row">
                            
                                             {% csrf_token %}
-                                            
+                                           
                                             {{ form|crispy }}
+                                            {{form.media}}
+            
                         </div>
 
 

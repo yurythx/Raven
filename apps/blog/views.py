@@ -1,3 +1,4 @@
+from audioop import reverse
 from django.shortcuts import render, redirect
 
 # Create your views here.
@@ -22,8 +23,10 @@ class PostCreate(CreateView):
     #fields = ['titulo_post', 'excerto_post', 'conteudo_post', 'autor_post', 'categoria_post', 'imagem_post']
     template_name = 'blog/novo_post.html'
     success_url ="/"
+    success_message = "Post adicionado com sucesso"
+    
 
-
+ 
 class PostUpdateView(UpdateView):
     
     model = Post

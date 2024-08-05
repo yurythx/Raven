@@ -1,32 +1,33 @@
 from django import forms
 from django.db import models
-from django_summernote.widgets import SummernoteWidget, SummernoteInplaceWidget
-# Create your models here.
+from ckeditor_uploader.fields import RichTextUploadingField
+from ckeditor.fields import RichTextField
+
 
 
 from django.contrib.auth.models import User
-from django_summernote.models import AbstractAttachment
+#
 from django.utils import timezone
 from utils.images import resize_image
 from utils.rands import slugify_new
 
 
-class PostAttachment(AbstractAttachment):
-    def save(self, *args, **kwargs):
-        if not self.name:
-            self.name = self.file.name
+#class PostAttachment(AbstractAttachment):
+#    def save(self, *args, **kwargs):
+#        if not self.name:
+#            self.name = self.file.name
 
-        current_file_name = str(self.file.name)
-        super_save = super().save(*args, **kwargs)
-        file_changed = False
+ #       current_file_name = str(self.file.name)
+ #       super_save = super().save(*args, **kwargs)
+ #       file_changed = False
 
-        if self.file:
-            file_changed = current_file_name != self.file.name
+ #       if self.file:
+ #           file_changed = current_file_name != self.file.name
+#
+ #       if file_changed:
+  #          resize_image(self.file, 900, True, 70)
 
-        if file_changed:
-            resize_image(self.file, 900, True, 70)
-
-        return super_save
+#        return super_save
 
 
 class Categoria(models.Model):
@@ -74,7 +75,10 @@ class Post(models.Model):
     slug = models.SlugField(unique=True, default="", null=False, blank=True, max_length=255)
     autor_post = models.ForeignKey(User, on_delete=models.DO_NOTHING, verbose_name='Nome do Autor')
     data_post = models.DateTimeField(default=timezone.now, verbose_name='Data da Publicação')
-    conteudo_post = models.TextField(verbose_name='Conteúdo')
+    conteudo_post = RichTextUploadingField()
+
+    #conteudo_post = RichTextField(config_name='awesome_ckeditor')
+    #conteudo_post = models.TextField(verbose_name='Conteúdo')
     excerto_post = models.TextField(verbose_name='Excerto')
     categoria_post = models.ForeignKey(Categoria, on_delete=models.DO_NOTHING, blank=True, null=True, verbose_name='Categoria')
     imagem_post = models.ImageField(upload_to='post_img/%Y/%m/%d', blank=True, null=True, verbose_name='Imagem')
