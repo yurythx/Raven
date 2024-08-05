@@ -49,16 +49,13 @@ INSTALLED_APPS = [
     "crispy_forms",
     "crispy_bootstrap5",
     
-    #'bootstrap_modal_forms',
-    #"tinymce",
-    #"django_summernote",
-    
-    'ckeditor',
-    'ckeditor_uploader',
-    
+   
+   
+    "django_summernote",
+ 
 
     #'apps.config',
-    #'apps.books',
+    
     'apps.blog', 
     'apps.pages', 
     
@@ -154,7 +151,7 @@ SESSION_EXPIRE_AFTER_LAST_ACTIVITY = True
 #SESSION_EXPIRE_AFTER_LAST_ACTIVITY_GRACE_PERIOD = 60  
 SESSION_TIMEOUT_REDIRECT = 'http://localhost:8000/'
 
-SESSION_TIMEOUT_REDIRECT = 'http://localhost:8000/contas/desconectado-inatividade/'
+SESSION_TIMEOUT_REDIRECT = 'http://localhost:8000/pages/desconectado-inatividade/'
 
 
 CRISPY_ALLOWED_TEMPLATE_PACKS = "bootstrap5"
@@ -236,46 +233,6 @@ MESSAGE_TAGS = {
 
 X_FRAME_OPTIONS = 'SAMEORIGIN'
 
-SUMMERNOTE_CONFIG = {
-    'summernote': {
-        # Toolbar customization
-        # https://summernote.org/deep-dive/#custom-toolbar-popover
-        'toolbar': [
-            ['style', ['style', ]],
-            ['font', ['bold', 'italic', 'clear']],
-            ['color', ['color']],
-            ['para', ['ul', 'ol', 'paragraph', 'hr', ]],
-            ['table', ['table']],
-            ['insert', ['link', 'picture']],
-            ['view', ['fullscreen', 'codeview', 'undo', 'redo']],
-        ],
-        'codemirror': {
-            'mode': 'htmlmixed',
-            'lineNumbers': 'true',
-            'lineWrapping': 'true',
-            'theme': 'dracula',
-        },
-    },
-    'css': (
-        '//cdnjs.cloudflare.com/ajax/libs/codemirror/6.65.7/theme/dracula.min.css',
-    ),
-    'attachment_filesize_limit': 30 * 1024 * 1024,
-    'attachment_model': 'blog.PostAttachment',
-}
+SUMMERNOTE_THEME = 'bs4'
 
 
-
-CKEDITOR_BASEPATH = '/static/ckeditor/ckeditor/'
-CKEDITOR_UPLOAD_PATH = 'uploads/'
-CKEDITOR_CONFIGS = {
-    'default':{
-        'toolbar': 'full',
-        'removePlugins':'exportpdf',
-        'extraPlugins': ','.join(
-            [
-                'codesnippet','widget','html5video','youtube'
-                
-            ]
-        ),       
-    }
-}

@@ -1,7 +1,7 @@
 from django import forms
 from django.db import models
-from ckeditor_uploader.fields import RichTextUploadingField
-from ckeditor.fields import RichTextField
+from django_summernote.fields import SummernoteTextFormField, SummernoteTextField
+
 
 
 
@@ -75,10 +75,7 @@ class Post(models.Model):
     slug = models.SlugField(unique=True, default="", null=False, blank=True, max_length=255)
     autor_post = models.ForeignKey(User, on_delete=models.DO_NOTHING, verbose_name='Nome do Autor')
     data_post = models.DateTimeField(default=timezone.now, verbose_name='Data da Publicação')
-    conteudo_post = RichTextUploadingField()
-
-    #conteudo_post = RichTextField(config_name='awesome_ckeditor')
-    #conteudo_post = models.TextField(verbose_name='Conteúdo')
+    conteudo_post = models.TextField(verbose_name='Titulo')
     excerto_post = models.TextField(verbose_name='Excerto')
     categoria_post = models.ForeignKey(Categoria, on_delete=models.DO_NOTHING, blank=True, null=True, verbose_name='Categoria')
     imagem_post = models.ImageField(upload_to='post_img/%Y/%m/%d', blank=True, null=True, verbose_name='Imagem')

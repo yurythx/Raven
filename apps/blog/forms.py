@@ -1,14 +1,14 @@
 from django import forms
 from django.forms import ModelForm
-from ckeditor_uploader.fields import RichTextUploadingField
-from ckeditor_uploader.widgets import CKEditorUploadingWidget
 from .models import Post
 from .models import Comentario
+from django_summernote.widgets import SummernoteWidget
+
 
 
 class PostForm(forms.ModelForm):
 
-    
+    #content = forms.CharField(widget=SummernoteWidget())
 
     class Meta:
         model = Post
@@ -22,14 +22,12 @@ class PostForm(forms.ModelForm):
         widgets = {
             'Titulo': forms.TextInput(attrs={'placeholder':'Titulo', 'class': 'form-control form-control-lg'}),
             'Sumário': forms.Textarea(attrs={'placeholder':'Súmario', 'class': 'form-control form-control-lg'}),
-            'Conteúdo': forms.CharField(label='Html:',widget=CKEditorUploadingWidget(attrs={'autocomplete': True})),
-            #'Conteúdo': forms.CharField(widget=CKEditorUploadingWidget()),
+            'Conteúdo': SummernoteWidget(),
             'Autor': forms.Select(attrs={'placeholder':'Post', 'class': 'form-control form-control-lg'}),
             'Categoria': forms.Select(attrs={'placeholder':'Post', 'class': 'form-control form-control-lg'}),
             'imagem': forms.FileInput(attrs={'id':'validatedCustomFile'}),
         }
 
-   
 
 
 class FormComentario(ModelForm):

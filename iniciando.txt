@@ -38,6 +38,10 @@ Instalar os seguintes pacotes Iniciais.
         pip install django-ckeditor
         pip install django-tinymce
 
+        pip uninstall bleach
+        pip install bleach==3.3.1
+
+        
 
 -- django-admin startproject core .
 

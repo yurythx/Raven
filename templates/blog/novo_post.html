@@ -22,10 +22,11 @@
                             
                            
                         <div class="row">
-                                    {{ form|crispy }}
-                                    {{ form.as_p }} 
-                                    {{ content|safe }}
-								   
+                           
+                                            {% csrf_token %}
+                                           
+                                            {{ form|crispy }}
+                                            {{form.media}}
             
                         </div>
 

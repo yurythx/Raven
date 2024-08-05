@@ -24,12 +24,11 @@ urlpatterns = [
     path('admin/', admin.site.urls),
 
     path('', include('pages.urls')),
-    #path('books', include('books.urls')),
-    path('blog', include('blog.urls')),
+    path('blog/', include('blog.urls')),
     path('accounts/', include('django.contrib.auth.urls')),
-    path('ckeditor/', include('ckeditor_uploader.urls'))
-    #path('summernote/', include('django_summernote.urls')),
-    #path('tinymce/', include('tinymce.urls')),
+  
+    path('summernote/', include('django_summernote.urls')),
+    
     
 ]
 urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT) # Adicionar Isto
